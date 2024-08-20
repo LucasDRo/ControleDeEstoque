@@ -3,12 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_cadastroEmpreendimento">
+    app:startDestination="@+id/nav_empreendimento">
 
     <fragment
-        android:id="@+id/nav_cadastroEmpreendimento"
-        android:name="com.example.controledeestoque.ui.cadastroEmpreendimento.cadastroEmpreendimentoFrag"
-        android:label="@string/menu_CadEmpreendimento"
-        tools:layout="@layout/fragment_cadastro_empreendimento" />
+        android:id="@+id/nav_empreendimento"
+        android:name="com.example.controledeestoque.ui.empreendimento.empreendimentoFrag"
+        android:label="@string/menu_empreendimento"
+        tools:layout="@layout/fragment_empreendimento" />
+    <fragment
+        android:id="@+id/nav_itens"
+        android:name="com.example.controledeestoque.ui.itens.itensFrag"
+        android:label="@string/menu_itens"
+        tools:layout="@layout/fragment_itens" />
 
 </navigation>
