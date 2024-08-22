@@ -2,15 +2,40 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_empreendimento"
-            android:icon="@drawable/ic_empreendimento"
-            android:title="@string/menu_empreendimento" />
-        <item
-            android:id="@+id/nav_itens"
-            android:icon="@drawable/ic_itens"
-            android:title="@string/menu_itens" />
-    </group>
+    <item
+        android:title="Empreendimento"
+        android:icon="@drawable/ic_empreendimento">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_empreendimento"
+                    android:icon="@drawable/ic_cadastros"
+                    android:title="Cadastro"/>
+                <item
+                    android:icon="@drawable/ic_consultas"
+                    android:title="Consulta" />
+                <item
+                    android:icon="@drawable/ic_relatorios"
+                    android:title="Relatório" />
+            </group>
+        </menu>
+    </item>
+    <item
+        android:title="Item"
+        android:icon="@drawable/ic_itens">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_itens"
+                    android:icon="@drawable/ic_cadastros"
+                    android:title="Cadastro"/>
+                <item
+                    android:icon="@drawable/ic_consultas"
+                    android:title="Consulta" />
+                <item
+                    android:icon="@drawable/ic_relatorios"
+                    android:title="Relatório" />
+            </group>
+        </menu>
+    </item>
 </menu>

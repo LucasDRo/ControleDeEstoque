@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gerenciamento de Empreendimentos"
+            android:text="Cadastro de Empreendimentos"
             android:textSize="20dp"
             android:padding="10dp"
             android:layout_marginTop="20dp"
@@ -24,31 +24,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Escolha uma opção:"
+            android:text="Preencha os dados:"
             android:textSize="15dp"
             android:layout_marginBottom="20dp"
             android:textAlignment="center"/>
 
         <Button
+            android:id="@+id/btnCadastroEmp"
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Cadastro"/>
-        <Button
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Consulta"/>
-        <Button
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Alteração"/>
-        <Button
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Relatório"/>
+            android:text="CADASTRAR"
+            />
+
 
     </LinearLayout>
 

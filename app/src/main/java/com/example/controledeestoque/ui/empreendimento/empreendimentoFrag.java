@@ -1,5 +1,6 @@
 package com.example.controledeestoque.ui.empreendimento;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,4 +23,5 @@ public class empreendimentoFrag extends Fragment {
 
         return rootView;
     }
+
 }
