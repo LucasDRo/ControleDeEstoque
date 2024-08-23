@@ -14,7 +14,7 @@
                 <item
                     android:id="@+id/nav_empreendimento"
                     android:icon="@drawable/ic_cadastros"
-                    android:title="Cadastro"/>
+                    android:title="Cadastro" />
                 <item
                     android:icon="@drawable/ic_consultas"
                     android:title="Consulta" />
