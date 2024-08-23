@@ -4,21 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.itens.itensFrag">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:padding="15dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastro de Itens"
             android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_marginTop="20dp"
             android:textAlignment="center"/>
 
         <TextView
@@ -29,13 +29,59 @@
             android:layout_marginBottom="20dp"
             android:textAlignment="center"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome do item:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtNome"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantidade em estoque:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtQtde"
+            android:inputType="number"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categoria:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtCategoria"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtCodigo"
+            android:layout_marginBottom="20dp"/>
+
         <Button
             android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="CADASTRAR"/>
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CADASTRAR"
+            android:layout_gravity="bottom"/>
 
     </LinearLayout>
+</ScrollView>
 
 </FrameLayout>
