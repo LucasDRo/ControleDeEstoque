@@ -1,9 +1,11 @@
 package com.example.controledeestoque;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.controledeestoque.control.DataBaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -20,6 +22,7 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityTelaPrincipalBinding binding;
+    private DataBaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,9 @@ public class TelaPrincipal extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_tela_principal);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        dbHelper = new DataBaseHelper(getApplicationContext());
+        SQLiteDatabase db =dbHelper.getWritableDatabase();
     }
 
     @Override

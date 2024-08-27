@@ -1,16 +1,16 @@
 package com.example.controledeestoque.model;
 
-public class item {
+public class Item {
 
     private String nome;
     private int qtde;
     private float codigo;
     private String categoria;
 
-    public item() {
+    public Item() {
     }
 
-    public item (String nome, int qtde, float codigo, String categoria){
+    public Item(String nome, int qtde, float codigo, String categoria){
         this.categoria=categoria;
         this.codigo=codigo;
         this.nome=nome;

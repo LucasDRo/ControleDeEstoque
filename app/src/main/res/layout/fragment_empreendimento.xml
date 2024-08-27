@@ -76,6 +76,17 @@
             android:id="@+id/edtInscricaoEstadual"
             android:layout_marginBottom="20dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rua:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtRua"
+            android:layout_marginBottom="20dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,7 +111,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edtNum"/>
+                android:id="@+id/edtNum"
+                android:inputType="number"/>
 
         </LinearLayout>
 
@@ -137,7 +149,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CADASTRAR"
-            android:layout_gravity="bottom"/>
+            android:layout_gravity="bottom"
+            android:id="@+id/btnCadastrar"/>
 
 
     </LinearLayout>
