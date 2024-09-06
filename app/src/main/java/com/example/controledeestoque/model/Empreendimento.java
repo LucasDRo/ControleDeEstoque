@@ -1,12 +1,14 @@
 package com.example.controledeestoque.model;
 
-import android.icu.text.StringSearch;
+import android.content.ContentValues;
+import android.content.Context;
 
-public class empreendimento {
+public class Empreendimento {
+    private int id;
     private String nomeFantasia;
     private String razaoSocial;
-    private Float cnpj;
-    private Float incricaoEstadual;
+    private double cnpj;
+    private double inscEstadual;
     private String bairro;
     private String rua;
     private int num;
@@ -17,10 +19,10 @@ public class empreendimento {
 
     }
 
-    public void empreendimento(String razaoSocial, Float cnpj, Float incricaoEstadual, String bairro, String rua, int num, String estado, String cidade){
+    public void empreendimento(String razaoSocial, double cnpj, double inscEstadual, String bairro, String rua, int num, String estado, String cidade){
         this.razaoSocial=razaoSocial;
         this.cnpj=cnpj;
-        this.incricaoEstadual=incricaoEstadual;
+        this.inscEstadual=inscEstadual;
         this.bairro=bairro;
         this.rua=rua;
         this.num=num;
@@ -44,20 +46,20 @@ public class empreendimento {
         this.razaoSocial = razaoSocial;
     }
 
-    public Float getCnpj() {
+    public double getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(Float cnpj) {
+    public void setCnpj(double cnpj) {
         this.cnpj = cnpj;
     }
 
-    public Float getIncricaoEstadual() {
-        return incricaoEstadual;
+    public double getinscEstadual() {
+        return inscEstadual;
     }
 
-    public void setIncricaoEstadual(Float incricaoEstadual) {
-        this.incricaoEstadual = incricaoEstadual;
+    public void setInscEstadual(double inscEstadual) {
+        this.inscEstadual = inscEstadual;
     }
 
     public String getBairro() {
@@ -98,5 +100,21 @@ public class empreendimento {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public ContentValues getContentValues(){
+        ContentValues values = new ContentValues();
+        if(id > 0)
+            values.put("id", id);
+        values.put("nomeFantasia", nomeFantasia);
+        values.put("cnpj", cnpj);
+        values.put("razaoSocial", razaoSocial);
+        values.put("inscEstadual", inscEstadual);
+        values.put("bairro", bairro);
+        values.put("rua", rua);
+        values.put("num", num);
+        values.put("estado", estado);
+        values.put("cidade", cidade);
+        return values;
     }
 }
