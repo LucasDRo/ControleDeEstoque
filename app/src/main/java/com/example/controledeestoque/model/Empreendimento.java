@@ -15,11 +15,8 @@ public class Empreendimento {
     private String estado;
     private String cidade;
 
-    public void empreendimento(){
-
-    }
-
-    public void empreendimento(String razaoSocial, double cnpj, double inscEstadual, String bairro, String rua, int num, String estado, String cidade){
+    public Empreendimento(String nomeFantasia, String razaoSocial, double cnpj, double inscEstadual, String bairro, String rua, int num, String estado, String cidade){
+        this.nomeFantasia=nomeFantasia;
         this.razaoSocial=razaoSocial;
         this.cnpj=cnpj;
         this.inscEstadual=inscEstadual;
@@ -28,6 +25,18 @@ public class Empreendimento {
         this.num=num;
         this.estado=estado;
         this.cidade=cidade;
+    }
+
+    public Empreendimento(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNomeFantasia() {

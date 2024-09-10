@@ -20,5 +20,10 @@
         android:name="com.example.controledeestoque.ui.itens.itensFrag"
         android:label="@string/menu_itens"
         tools:layout="@layout/fragment_itens" />
+    <fragment
+        android:id="@+id/nav_empConsulta"
+        android:name="com.example.controledeestoque.ui.empreendimento.EmpConsulta"
+        android:label="@string/menu_empreendimento"
+        tools:layout="@layout/fragment_emp_consulta" />
 
 </navigation>

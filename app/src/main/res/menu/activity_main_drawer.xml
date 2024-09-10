@@ -16,6 +16,7 @@
                     android:icon="@drawable/ic_cadastros"
                     android:title="Cadastro" />
                 <item
+                    android:id="@+id/nav_empConsulta"
                     android:icon="@drawable/ic_consultas"
                     android:title="Consulta" />
                 <item
