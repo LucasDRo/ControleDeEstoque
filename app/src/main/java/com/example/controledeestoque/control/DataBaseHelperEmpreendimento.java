@@ -35,7 +35,7 @@ public class DataBaseHelperEmpreendimento {
             String bairro = cursor.getString(cursor.getColumnIndexOrThrow("bairro"));
             String rua = cursor.getString(cursor.getColumnIndexOrThrow("rua"));
             int num = cursor.getInt(cursor.getColumnIndexOrThrow("num"));
-            String estado = cursor.getString(cursor.getColumnIndexOrThrow("estado"))
+            String estado = cursor.getString(cursor.getColumnIndexOrThrow("estado"));
             String cidade = cursor.getString(cursor.getColumnIndexOrThrow("cidade"));
 
 
