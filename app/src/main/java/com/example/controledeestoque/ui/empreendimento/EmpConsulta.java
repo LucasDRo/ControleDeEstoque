@@ -29,11 +29,13 @@ public class EmpConsulta extends Fragment {
 
 
         Button btnConsultar = rootView.findViewById(R.id.btnConsultarEmp);
+        Button btnAlterar = rootView.findViewById(R.id.btnAlterarEmp);
 
         btnConsultar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                String nome = getActivity().findViewById(R.id.nomeEmp).toString();
+                EditText nomeEmpField = getActivity().findViewById(R.id.nomeEmp);
+                String nome = nomeEmpField.getText().toString().trim();
                 if(!nome.equals("")){
                     dbHelper = new DataBaseHelperEmpreendimento(getActivity().getApplicationContext());
                     Empreendimento empreendimento = dbHelper.consultar(nome);
@@ -46,6 +48,58 @@ public class EmpConsulta extends Fragment {
                     }
                 }else{
                     limpar();
+                    Toast.makeText(getActivity(), "Preencha o campo com o Nome Fantasia da empresa!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnAlterar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                EditText nomeEmpField = getActivity().findViewById(R.id.nomeEmp);
+                String nome = nomeEmpField.getText().toString().trim();
+
+                if(!nome.equals("")){
+                    dbHelper = new DataBaseHelperEmpreendimento(getActivity().getApplicationContext());
+                    Empreendimento empreendimento = dbHelper.consultar(nome);
+
+                    if(empreendimento != null){
+
+                        EditText edtNomeFantasia = getView().findViewById(R.id.edtNomeFantasia);
+                        EditText edtRua = getView().findViewById(R.id.edtRua);
+                        EditText edtRazaoSocial = getView().findViewById(R.id.edtRazaoSocial);
+                        EditText edtCnpj = getView().findViewById(R.id.edtCnpj);
+                        EditText edtInscEstadual = getView().findViewById(R.id.edtInscricaoEstadual);
+                        EditText edtBairro = getView().findViewById(R.id.edtBairro);
+                        EditText edtNum = getView().findViewById(R.id.edtNum);
+                        EditText edtCidade = getView().findViewById(R.id.edtCidade);
+                        EditText edtEstado = getView().findViewById(R.id.edtEstado);
+
+
+                        empreendimento.setNomeFantasia(edtNomeFantasia.getText().toString());
+                        empreendimento.setRazaoSocial(edtRazaoSocial.getText().toString());
+                        empreendimento.setCnpj(Double.parseDouble(edtCnpj.getText().toString()));
+                        empreendimento.setInscEstadual(Double.parseDouble(edtInscEstadual.getText().toString()));
+                        empreendimento.setRua(edtRua.getText().toString());
+                        empreendimento.setBairro(edtBairro.getText().toString());
+                        empreendimento.setNum(Integer.parseInt(edtNum.getText().toString()));
+                        empreendimento.setCidade(edtCidade.getText().toString());
+                        empreendimento.setEstado(edtEstado.getText().toString());
+
+
+
+                        int rowsUpdated = dbHelper.alterar(empreendimento, nome);
+
+                        if(rowsUpdated > 0) {
+                            Toast.makeText(getActivity(), "Empreendimento atualizado com sucesso!", Toast.LENGTH_SHORT).show();
+                            limpar();
+                        } else {
+                            Toast.makeText(getActivity(), "Falha ao atualizar empreendimento!", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), "Empreendimento não encontrado!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
                     Toast.makeText(getActivity(), "Preencha o campo com o Nome Fantasia da empresa!", Toast.LENGTH_SHORT).show();
                 }
             }

@@ -173,12 +173,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
                 <Button
+                    android:id="@+id/btnAlterarEmp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Alterar"
                     android:layout_marginRight="50dp"
                     android:backgroundTint="@color/temaPrincipal"/>
                 <Button
+                    android:id="@+id/btnExcluirEmp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Excluir"

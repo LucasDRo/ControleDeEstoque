@@ -17,7 +17,7 @@ public class DataBaseHelperEmpreendimento {
     }
 
     public long cadastrar(Empreendimento empreendimento){
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
         long newId = db.insert("empreendimento", null, empreendimento.getContentValues());
         return newId;
     }
@@ -25,7 +25,7 @@ public class DataBaseHelperEmpreendimento {
     public Empreendimento consultar (String nome){
         Empreendimento empreendimento = null;
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM empreendimento WHERE nomeFantasia = ?", new String[]{nome});
+        Cursor cursor = db.rawQuery("SELECT * FROM empreendimento WHERE nomeFantasia = ?", new String[]{nome.trim()});
 
         if(cursor.moveToNext()){
             String nomeFantasia = cursor.getString(cursor.getColumnIndexOrThrow("nomeFantasia"));
@@ -42,8 +42,23 @@ public class DataBaseHelperEmpreendimento {
             empreendimento = new Empreendimento(nomeFantasia, razaoSocial, cnpj, inscEstadual, bairro, rua, num, estado, cidade);
         }
         cursor.close();
+        db.close();
 
         return empreendimento;
+    }
+
+    public int alterar(Empreendimento empreendimento, String nome) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+
+        String whereClause = "nomeFantasia = ?";
+        String[] whereArgs = { nome };
+
+
+        int rowsAffected = db.update("empreendimento", empreendimento.getContentValues(), whereClause, whereArgs);
+
+        db.close();
+        return rowsAffected;
     }
 
 }
